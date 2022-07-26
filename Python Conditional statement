@@ -1,0 +1,212 @@
+#Conditional Statement
+i=input('Enter the String:')
+s='aeiouAEIOU'
+if i in s:
+    print('is Vowel')
+else:
+    print('is Not a Vowel')
+Enter the String:aei
+is Vowel
+#Program to find the particular character is vowel or not
+ch=input('Enter the String:')
+if (ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U'):
+    print(ch,'is Vowel')
+elif (ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u'):
+    print(ch,'is a Lower Case Vowel')
+else:
+    print(ch,'is not a Vowel')
+Enter the String:A
+A is Vowel
+a=int(90.8)
+print(a)
+90
+#Nested List - List inside the another list
+l=[12,45,80.5,60,75]
+print(l)
+l.append([90,55,75])
+print(l)
+[12, 45, 80.5, 60, 75]
+[12, 45, 80.5, 60, 75, [90, 55, 75]]
+print(l[5])
+[90, 55, 75]
+print(l[5][1])
+55
+#Nested if condition 
+#Write a program to find whether the given number is positive or not
+n=int(input('Enter the Number:'))
+if n>=0:
+    if n==0:
+        print('is Zero')
+    else:
+        print(n,'is a Positive Number')
+else:
+    print(n,'is a Negative Number')
+Enter the Number:-9
+-9 is a Negative Number
+For Loop Syntax
+for variablename in sequence: Body of the Statement
+
+li=['Apple','Mango','Orange','Kiwi']
+for i in li:
+    print(li)
+['Apple', 'Mango', 'Orange', 'Kiwi']
+['Apple', 'Mango', 'Orange', 'Kiwi']
+['Apple', 'Mango', 'Orange', 'Kiwi']
+['Apple', 'Mango', 'Orange', 'Kiwi']
+#For loop - It will execute in a sequential order
+li=['Apple','Mango','Orange','Kiwi']
+for i in li:
+    print(i)
+Apple
+Mango
+Orange
+Kiwi
+#Range Function in for loop
+#range(10 - Default Value is 0 to 9)
+for i in range(10):
+    print(i)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+#range(start value,end value(n-1))
+for i in range(1,20):
+    print(i)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+#Write a program to find the odd and even number between 0 to 20 
+#range(start value,end value(n-1),step value)
+for x in range(0,20,2):
+    print(x)
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+#Odd Number between 0 to 20
+for x in range(1,20,2):
+    print(x)
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+#Multiplication Table using for loop
+# 1 * 2 = 2
+
+ #12 * 2 = 24
+n=int(input('Enter the Number:'))
+for i in range(1,13):
+    print(i,'*',n,'=',i*n)
+Enter the Number:2
+1 * 2 = 2
+2 * 2 = 4
+3 * 2 = 6
+4 * 2 = 8
+5 * 2 = 10
+6 * 2 = 12
+7 * 2 = 14
+8 * 2 = 16
+9 * 2 = 18
+10 * 2 = 20
+11 * 2 = 22
+12 * 2 = 24
+#Creation of Empty List
+li=[]
+for i in range(25):
+    if i%2==0:
+        li.append(i)
+print(li)
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
+#While Loop
+#C Program - for(i=0;i>10;i++)
+i=0 #Initializing the value as 0
+while i<10: #Condition
+    print(i) #Display the output
+    i+=1     #Increment the value - i+1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+#Break and continue Statemen
+s='Python'
+for i in s:
+    if i=='h':
+        break
+    print(i)
+P
+y
+t
+s='Python'
+for i in s:
+    print(i)
+P
+y
+t
+h
+o
+n
+#Continue Statement
+s='Python Program'
+for i in s:
+    if i=='P':
+        continue
+    print(i)
+y
+t
+h
+o
+n
+ 
+r
+o
+g
+r
+a
+m
+x=0
+while x<6:
+    if x==4:
+        continue
+    print(x)
+    x+=1
+ 
