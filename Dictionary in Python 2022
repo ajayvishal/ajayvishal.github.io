@@ -1,0 +1,869 @@
+Dictionary¶
+-->It is a Mutable Data Type -->Collection of elements are stored using key with value pair enclosed within a curley bracket
+
+In [1]:
+d={'Name':'kani','ID':4522}
+print(d)
+print(type(d))
+{'Name': 'kani', 'ID': 4522}
+<class 'dict'>
+In [2]:
+#Replacing the dictionary element
+d['Name']='Chairmakani'
+d['Native']='Tenkasi'
+print(d)
+{'Name': 'Chairmakani', 'ID': 4522, 'Native': 'Tenkasi'}
+In [3]:
+#adding the new element to the dictionary
+d['Degree']='ME'
+print(d)
+{'Name': 'Chairmakani', 'ID': 4522, 'Degree': 'ME'}
+In [4]:
+#How to adding more than one element in to the dictionary
+d.update({'Role':'S/w Trianer','Native':'Tenkasi'})
+print(d)
+{'Name': 'Chairmakani', 'ID': 4522, 'Degree': 'ME', 'Role': 'S/w Trianer', 'Native': 'Tenkasi'}
+In [5]:
+print(d.keys())
+print(d.values())
+print(d.items())
+dict_keys(['Name', 'ID', 'Degree', 'Role', 'Native'])
+dict_values(['Chairmakani', 4522, 'ME', 'S/w Trianer', 'Tenkasi'])
+dict_items([('Name', 'Chairmakani'), ('ID', 4522), ('Degree', 'ME'), ('Role', 'S/w Trianer'), ('Native', 'Tenkasi')])
+In [6]:
+print(len(d))
+5
+In [7]:
+d.sort()
+print(d)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-7-777a0756df1a> in <module>
+----> 1 d.sort()
+      2 print(d)
+
+AttributeError: 'dict' object has no attribute 'sort'
+In [8]:
+#How to access the particular element in the dictionary
+print(d['ID'])
+4522
+In [9]:
+print(d.get('Role'))
+S/w Trianer
+In [10]:
+#How to remove the partocular element in dictionary
+del d['ID']
+print(d)
+{'Name': 'Chairmakani', 'Degree': 'ME', 'Role': 'S/w Trianer', 'Native': 'Tenkasi'}
+In [13]:
+d.pop()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-13-663961784a31> in <module>
+----> 1 d.pop()
+
+TypeError: pop expected at least 1 argument, got 0
+In [12]:
+d.pop('Name')
+print(d)
+{'Degree': 'ME', 'Role': 'S/w Trianer', 'Native': 'Tenkasi'}
+In [14]:
+d.remove()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-14-e3d1fa7be83d> in <module>
+----> 1 d.remove()
+
+AttributeError: 'dict' object has no attribute 'remove'
+In [15]:
+#list
+l=[23,45,6,90]
+l.remove(6)
+print(l)
+[23, 45, 90]
+In [20]:
+d.clear()
+print(d)
+{}
+In [18]:
+f=['Apple','Orange','Mango']
+f1=['Pine Apple','Papaya']
+print(f+f1)
+['Apple', 'Orange', 'Mango', 'Pine Apple', 'Papaya']
+In [1]:
+#Set - Duplicate values are not allowed in set
+A={2,5,'A',7,'c',2,8}
+print(A)
+print(type(A))
+{2, 5, 7, 8, 'c', 'A'}
+<class 'set'>
+In [2]:
+B={3,5,'a',6,'c',8}
+print(B)
+{3, 5, 6, 8, 'a', 'c'}
+In [6]:
+#Set Operations
+#Union
+print(A|B)
+print(A.union(B))
+{2, 3, 5, 6, 7, 8, 'a', 'c', 'A'}
+{2, 3, 5, 6, 7, 8, 'a', 'c', 'A'}
+In [7]:
+#Intersection - common values are displayed
+print(A)
+print(B)
+print(A&B)
+print(A.intersection(B))
+{2, 5, 7, 8, 'c', 'A'}
+{3, 5, 6, 8, 'a', 'c'}
+{8, 5, 'c'}
+{8, 5, 'c'}
+In [11]:
+#Difference
+print(A-B)
+print(B-A)
+print(A.difference(B))
+{'A', 2, 7}
+{'a', 3, 6}
+{'A', 2, 7}
+In [12]:
+#Symmetric Difference
+print(A^B)
+print(A.symmetric_difference(B))
+print(B.symmetric_difference(A))
+{2, 3, 6, 7, 'a', 'A'}
+{2, 3, 6, 7, 'a', 'A'}
+{2, 3, 6, 7, 'a', 'A'}
+In [14]:
+#Empty Set Creation 
+s=set() 
+#Adding the value into the empty set
+#Add - We can add only one element at a time
+s.add(8)
+print(s)
+print(type(s))
+{8}
+<class 'set'>
+In [15]:
+a={5,6}
+a.add(9)
+print(a)
+{9, 5, 6}
+In [16]:
+#update - we can add more than one element at a time
+s.update({5,7,4})
+print(s)
+{8, 4, 5, 7}
+In [17]:
+print(len(s))
+4
+In [18]:
+print(s.count(7))
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-18-d9dda061572d> in <module>
+----> 1 print(s.count(7))
+
+AttributeError: 'set' object has no attribute 'count'
+In [19]:
+print(sum(s))
+print(max(s))
+print(min(s))
+24
+8
+4
+In [22]:
+A={2,4,5,7}
+B={6,8,9,5}
+print(A+B)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-22-1a3d3609140a> in <module>
+      1 A={2,4,5,7}
+      2 B={6,8,9,5}
+----> 3 print(A+B)
+
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+In [23]:
+print(s.sort())
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-23-02ab7a389261> in <module>
+----> 1 print(s.sort())
+
+AttributeError: 'set' object has no attribute 'sort'
+In [24]:
+#How to remove the particular element in the set
+del s[0]
+print(s)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-24-c395d385037f> in <module>
+      1 #How to remove the particular element in the set
+----> 2 del s[0]
+      3 print(s)
+
+TypeError: 'set' object doesn't support item deletion
+In [25]:
+print(s)
+s.pop()
+print(s)
+{8, 4, 5, 7}
+{4, 5, 7}
+In [27]:
+s.pop()
+print(s)
+{5, 7}
+In [30]:
+s.update({9,10,24})
+print(s)
+s.remove(5)
+print(s)
+{5, 24, 9, 10}
+{24, 9, 10}
+In [31]:
+s.clear()
+print(s)
+set()
+In [32]:
+#Frozenset - Immutable data type, we cannot change the values in the set
+a={2,3,9,10,'A',5}
+print(a)
+print(type(a))
+a.update({6,13})
+print(a)
+{2, 3, 5, 9, 10, 'A'}
+<class 'set'>
+{2, 3, 5, 6, 9, 10, 13, 'A'}
+In [33]:
+f=frozenset(a)
+print(f)
+f.update({8,14})
+print(f)
+frozenset({2, 3, 5, 6, 9, 10, 13, 'A'})
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-33-24f6c814ab29> in <module>
+      1 f=frozenset(a)
+      2 print(f)
+----> 3 f.update({8,14})
+      4 print(f)
+
+AttributeError: 'frozenset' object has no attribute 'update'
+In [1]:
+#Input and Output
+x=90
+print(x)
+90
+In [3]:
+x=input('Enter Your Name:')
+print('My name is:',x)
+Enter Your Name:Kani
+My name is: Kani
+In [4]:
+a=input('Enter the Number:')
+print('The value of a is:',a)
+Enter the Number:90
+The value of a is: 90
+In [5]:
+#Sum of two numbers
+a=input('Enter the Number:') #Input Function
+print('The value of a is:',a) #Output Function
+b=input('Enter the Number:')
+print('The Value of b is:',b)
+print('Sum of a and b is:',a+b)
+Enter the Number:80
+The value of a is: 80
+Enter the Number:45
+The Value of b is: 45
+Sum of a and b is: 8045
+In [8]:
+a=int(input('Enter the Number:'))
+print('The value of a is:',a)
+b=int(input('Enter the Number:'))
+print('The Value of b is:',b)
+print('Sum of a and b is:',a+b)
+Enter the Number:70
+The value of a is: 70
+Enter the Number:45
+The Value of b is: 45
+Sum of a and b is: 115
+In [9]:
+a=float(input('Enter the Number:'))
+print('The value of a is:',a)
+b=float(input('Enter the Number:'))
+print('The Value of b is:',b)
+print('Sum of a and b is:',a+b)
+Enter the Number:90
+The value of a is: 90.0
+Enter the Number:78.5
+The Value of b is: 78.5
+Sum of a and b is: 168.5
+In [10]:
+#Complex Number - Real + Imaginary Number (j or J)
+a=complex(input('Enter the Number:'))
+print('The value of a is:',a)
+b=complex(input('Enter the Number:'))
+print('The Value of b is:',b)
+print('Sum of a and b is:',a+b)
+Enter the Number:90+2j
+The value of a is: (90+2j)
+Enter the Number:50+3j
+The Value of b is: (50+3j)
+Sum of a and b is: (140+5j)
+In [12]:
+#Arithmetic Operator - +,-,*,/,//,%,**
+a=int(input('Enter the Number 1:'))
+b=int(input('Enter the Number 2:'))
+print('Addition of a and b is:',a+b) #a and b - Operand, + - Operator
+print('Subtraction of a and b is:',a-b)
+print('Multiplication of a and b is:',a*b)
+Enter the Number 1:70
+Enter the Number 2:65
+Addition of a and b is: 135
+Subtraction of a and b is: 5
+Multiplication of a and b is: 4550
+In [16]:
+a=int(input('Enter the Number 1:'))
+b=int(input('Enter the Number 2:'))
+print('Division of a and b is:',a/b)
+print('Floor Division of a and b is:',a//b)
+print('Modulus of a and b is:',a%b)
+Enter the Number 1:21
+Enter the Number 2:2
+Division of a and b is: 10.5
+Floor Division of a and b is: 10
+Modulus of a and b is: 1
+In [17]:
+a=int(input('Enter the Number 1:'))
+b=int(input('Enter the Number 2:'))
+print('Exponential of a and b is:',a**b) #Power Value
+Enter the Number 1:4
+Enter the Number 2:2
+Exponential of a and b is: 16
+In [19]:
+#Assignment Operator - +=, -=, *=,/=,//=, %=, **=
+a=int(input('Enter the Number 1:')) #20
+b=int(input('Enter the Number 2:')) #10
+c=a+b #20+10 = 30
+print('The Value of c is:',c) #30
+c+=a #c=c+a - 30+20 =50
+print('Addition of value is:',c)
+c-=b
+print('Subtraction of value is:',c)
+c*=a
+print('Multiplication of c is:',c)
+Enter the Number 1:50
+Enter the Number 2:20
+The Value of c is: 70
+Addition of value is: 120
+Subtraction of value is: 100
+Multiplication of c is: 5000
+In [24]:
+x=34
+y=3
+x/=y
+print('Division of x is:',x) #11.3
+x//=x #34//34
+print('Floor Division of x is:',x)
+Division of x is: 11.333333333333334
+Floor Division of x is: 1.0
+In [21]:
+x=34
+y=3
+x//=y
+print('Floor Division of x is:',x)
+Floor Division of x is: 11
+In [26]:
+x=5
+y=3
+x**=y
+print('Exponential of x is',x)
+Exponential of x is 125
+In [28]:
+5+6
+Out[28]:
+11
+In [29]:
+print(34-5)
+29
+In [30]:
+a,b,c=8,6,4
+print(c)
+4
+In [32]:
+#Comparison or Relational Operator - ==, !=, >, >=, <, <=
+a=int(input('Enter Your Number 1='))
+b=int(input('Enter Your Number 2='))
+print('Result of Equal is', a==b)
+print('Not Equal is:',a!=b)
+Enter Your Number 1=70
+Enter Your Number 2=65
+Result of Equal is False
+Not Equal is: True
+Boolean Operator - If condition satisfies it will produce the result True Otherwise False¶
+1) True - 1 2) Flase - 0
+
+In [33]:
+True+False*True+True
+Out[33]:
+2
+In [37]:
+a=int(input('Enter Your Number 1='))
+b=int(input('Enter Your Number 2='))
+print('Greater Than:',a>b)
+print('Greater Than Equal To:',a>=b)
+Enter Your Number 1=67
+Enter Your Number 2=56
+Greater Than: True
+Greater Than Equal To: True
+In [39]:
+a=int(input('Enter Your Number 1='))
+b=int(input('Enter Your Number 2='))
+print('Greater Than:',a<b)
+print('Greater Than Equal To:',a<=b)
+Enter Your Number 1=80
+Enter Your Number 2=80
+Greater Than: False
+Greater Than Equal To: True
+In [2]:
+#To display the binary value
+print('Binary value of 5 is:',bin(5))
+print('Binary value of 15 is:',bin(15))
+0b101
+0b1111
+In [3]:
+#To display the Octal value - 8
+print('Octal value of 12 is:',oct(12))
+print('Octal value of 23 is:',oct(23))
+Octal value of 12 is: 0o14
+Octal value of 23 is: 0o27
+In [4]:
+#Hexa Decimal Value - 16 - 0 to 9
+print('Hexa value of 25 is:',hex(25))
+print('Hexa value of 29 is:',hex(29))
+Hexa value of 25 is: 0x19
+Hexa value of 29 is: 0x1d
+In [5]:
+#Bitwise Operator -
+x=2
+y=3
+print('AND Value is:',x&y)
+print('OR Value is:',x|y)
+print('EX-OR Value is:',x^y)
+print('NOT Value is:',~x)
+AND Value is: 2
+OR Value is: 3
+EX-OR Value is: 1
+NOT Value is: -3
+In [6]:
+y=-4
+x=3
+print(~y)
+print(~x)0
+3
+-4
+In [7]:
+#Logical Operator - and or or
+x=90
+y=90
+print(x==y and x!=y) #Both the condition should get satisfied
+print(x==y or x!=y)  #Either the one condition should get satisfied 
+False
+True
+In [8]:
+#Membership Operator - in or not in
+fruits=['Apple','Orange','MAngo']
+print('Apple' in fruits)
+print('Mango' in fruits)
+True
+False
+In [10]:
+#not in
+print('orange' not in fruits)
+True
+In [15]:
+#Identity Operator - is or is not
+#Number - Immutable Data Type
+a=90
+print(id(a))
+b=90
+print(id(b))
+print(a is b)
+print(a is not b)
+140725187785280
+140725187785280
+True
+False
+In [14]:
+#list
+l1=[1,2,3]
+l2=[1,2,3]
+print(l1 is l2)
+False
+In [8]:
+#Set
+s=set()
+s.add(12)
+s.update({2,'A',2,4,9})
+print(s)
+print(type(s))
+{2, 4, 'A', 9, 12}
+<class 'set'>
+In [6]:
+s.add(7)
+print(s)
+{2, 4, 7, 'A', 9, 12}
+In [9]:
+s1={4,6,'a','A',7,8,11}
+print(s1)
+#union
+print(s|s1)
+print(s.union(s1))
+#Intersection
+print(s&s1)
+#Difference
+print(s-s1)
+#symmetric difference
+print(s^s1)
+{4, 6, 7, 'A', 8, 11, 'a'}
+{2, 4, 6, 7, 'A', 9, 8, 11, 12, 'a'}
+{2, 4, 6, 7, 'A', 9, 8, 11, 12, 'a'}
+{'A', 4}
+{9, 2, 12}
+{2, 6, 7, 8, 9, 11, 12, 'a'}
+In [2]:
+#Variable
+'''_a=80
+print('The value of a is:',_a)'''
+#Implicit Type Conversion
+a=90
+print(type(a))
+f=80.45
+print(type(f))
+<class 'int'>
+<class 'float'>
+In [3]:
+#Complex - real + Imaginary Number(j or J)
+c=90+2j
+print(c)
+print(type(c))
+(90+2j)
+<class 'complex'>
+In [4]:
+#string - collection of charaster enclosed within a sinlge, double or 
+#triple quotation
+s='pthon'
+print(s)
+print(type(s))
+pthon
+<class 'str'>
+In [6]:
+#Explicit Type Conversion - Convert one data type to another data type
+f=90.45
+print(int(f))
+c=90
+print(complex(c))
+90
+(90+0j)
+In [7]:
+s='Python PRogram'
+print(max(s))
+print(min(s))
+y
+ 
+In [8]:
+#ASCII - American standard code for information interchange
+print(ord('a'))
+print(ord('z'))
+print(ord('A'))
+print(ord('Z'))
+print(ord(' '))
+97
+122
+65
+90
+32
+In [13]:
+#while loop - Execute in a sequential order
+#we can give condition in while loop
+i=0 #initialization of value
+while i<=10:
+    #i+=1 # i = i+1 -- 0+1
+    print(i)
+    i+=1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+In [3]:
+_a=90
+print('Value of a is:',_a)
+Value of a is: 90
+In [4]:
+#Type Conversion - Implicit and Explicit 
+#Implicit Type Conversion - type
+i=89
+print(i)
+print(type(i))
+89
+<class 'int'>
+In [5]:
+#Floating point value
+f=90.45
+print(f)
+print(type(f))
+90.45
+<class 'float'>
+In [7]:
+#Complex - Real Number + Imaginary Number (j or J)
+c=85.4+2J
+print(c)
+print(type(c))
+#pydroid3
+(85.4+2j)
+<class 'complex'>
+In [8]:
+#String - Collection of characters are stored using 
+#single, double or triple quotation
+s='Python Program'
+print(s)
+print(type(s))
+Python Program
+<class 'str'>
+In [1]:
+#Dictionary - It is a Mutable Data Type
+d={} #Creation of Empty Dictionary
+print(d)
+print(type(d))
+{}
+<class 'dict'>
+In [2]:
+d.update({'Name':'Kani','Degree':'BE','Native':'Tenkasi'})
+print(d)
+{'Name': 'Kani', 'Degree': 'BE', 'Native': 'Tenkasi'}
+In [3]:
+d['Name']='Chairmakani'
+print(d)
+{'Name': 'Chairmakani', 'Degree': 'BE', 'Native': 'Tenkasi'}
+In [4]:
+d['Id']=345
+print(d)
+{'Name': 'Chairmakani', 'Degree': 'BE', 'Native': 'Tenkasi', 'Id': 345}
+In [5]:
+print(d.keys())
+dict_keys(['Name', 'Degree', 'Native', 'Id'])
+In [6]:
+print(d.values())
+dict_values(['Chairmakani', 'BE', 'Tenkasi', 345])
+In [7]:
+print(d.items())
+dict_items([('Name', 'Chairmakani'), ('Degree', 'BE'), ('Native', 'Tenkasi'), ('Id', 345)])
+In [8]:
+#How to access the dictionary element - using their key
+print('My name is:',d['Name'])
+My name is: Chairmakani
+In [9]:
+print(d.get('Id'))
+345
+In [10]:
+#How to remove the dictionary element
+del d['Id']
+print(d)
+{'Name': 'Chairmakani', 'Degree': 'BE', 'Native': 'Tenkasi'}
+In [11]:
+d.pop('Degree')
+print(d)
+{'Name': 'Chairmakani', 'Native': 'Tenkasi'}
+In [12]:
+#List
+l=[1,2,3,4]
+print(l)
+l.remove(2)
+print(l)
+[1, 2, 3, 4]
+[1, 3, 4]
+In [13]:
+d.remove()
+print(d)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-13-78c1e69c9298> in <module>
+----> 1 d.remove()
+      2 print(d)
+
+AttributeError: 'dict' object has no attribute 'remove'
+In [14]:
+d.clear()
+print(d)
+{}
+In [20]:
+#set
+s=set() #Empty set
+print(s)
+print(type(s))
+set()
+<class 'set'>
+In [17]:
+#add- we can add only one element at a time
+s.add(3)
+print(s)
+{3}
+In [18]:
+s.update({4,2,4,6,'A',9})
+print(s)
+{2, 3, 4, 6, 9, 'A'}
+In [22]:
+s1={2,9,'a',7,6,4}
+print(s1)
+print(type(s1))
+{2, 4, 6, 7, 9, 'a'}
+<class 'set'>
+In [27]:
+#Union 
+s={2, 3, 4, 6, 9, 'A'}
+print(s)
+print(s1)
+print(s|s1)
+print(s.union(s1))
+{2, 3, 4, 6, 9, 'A'}
+{2, 4, 6, 7, 9, 'a'}
+{2, 3, 4, 6, 7, 9, 'A', 'a'}
+{2, 3, 4, 6, 7, 9, 'A', 'a'}
+In [28]:
+#Intersection
+print(s&s1)
+print(s.intersection(s1))
+{9, 2, 4, 6}
+{9, 2, 4, 6}
+In [30]:
+#Difference
+print(s)
+print(s1)
+print(s-s1)
+print(s.difference(s1))
+{2, 3, 4, 6, 9, 'A'}
+{2, 4, 6, 7, 9, 'a'}
+{3, 'A'}
+{3, 'A'}
+In [31]:
+#symmetric_difference
+print(s^s1)
+print(s.symmetric_difference(s1))
+{3, 7, 'a', 'A'}
+{3, 7, 'a', 'A'}
+In [33]:
+print(s)
+print(len(s))
+{2, 3, 4, 6, 9, 'A'}
+6
+In [36]:
+A={2, 3, 4, 6, 9, 12}
+print(sum(A))
+print(max(A))
+print(min(A))
+36
+12
+2
+In [37]:
+#How to delete the set element
+del A[0]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-37-ada1ec5e0eb6> in <module>
+      1 #How to delete the set element
+----> 2 del A[0]
+
+TypeError: 'set' object doesn't support item deletion
+In [38]:
+A.pop()
+print(A)
+{3, 4, 6, 9, 12}
+In [39]:
+A.remove(6)
+print(A)
+{3, 4, 9, 12}
+In [40]:
+A.clear()
+print(A)
+set()
+In [41]:
+#Tuple - Immutable Data Type
+t=(10,45,20,90,55)
+print(t)
+print(type(t))
+(10, 45, 20, 90, 55)
+<class 'tuple'>
+In [42]:
+t[0]=15
+print(t)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-42-8f7ed748b0e4> in <module>
+----> 1 t[0]=15
+      2 print(t)
+
+TypeError: 'tuple' object does not support item assignment
+In [46]:
+#Concatenation - +
+tu=t+(60,70,45)
+print(tu)
+(10, 45, 20, 90, 55, 60, 70, 45)
+In [47]:
+print(len(tu))
+print(tu.count(45))
+8
+2
+In [48]:
+print(sum(tu))
+print(max(tu))
+print(min(tu))
+395
+90
+10
+In [49]:
+#How to access the tuple element
+print(tu[1])
+print(tu[0:5])
+45
+(10, 45, 20, 90, 55)
+In [50]:
+print(tu[:6])
+print(tu[2:])
+(10, 45, 20, 90, 55, 60)
+(20, 90, 55, 60, 70, 45)
+In [51]:
+print(tu[:-1])
+print(tu[::-1])
+(10, 45, 20, 90, 55, 60, 70)
+(45, 70, 60, 55, 90, 20, 45, 10)
+In [53]:
+#Input and Output Function
+x=input('Enter Your Name=')
+print('My name is:',x)
+Enter Your Name=Vignesh
+My name is: Vignesh
+In [54]:
+#Arithmetic Operators - +, - , *, /, //, %, **
+x=input('Enter The Number1:')
+y=input('Enter The Number2:')
+print('Addition of x and y is:',x+y)
+Enter The Number1:90
+Enter The Number2:45
+Addition of x and y is: 9045
+In [56]:
+x=int(input('Enter The Number1:'))
+y=float(input('Enter The Number2:'))
+print('Addition of x and y is:',x+y)
+Enter The Number1:90
+Enter The Number2:45.5
+Addition of x and y is: 135.5
+In [ ]:
+ 
